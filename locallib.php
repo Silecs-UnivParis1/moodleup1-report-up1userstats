@@ -5,7 +5,7 @@
  *
  * @package    report
  * @subpackage up1userstats
- * @copyright  2012-2016 Silecs {@link http://www.silecs.info/societe}
+ * @copyright  2012-2020 Silecs {@link http://www.silecs.info/societe}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
@@ -43,9 +43,9 @@ function report_up1userstats_users_by_affiliation() {
     global $DB;
     $res = array();
 
-    $fieldid = $DB->get_field('custom_info_field', 'id',
-            array('objectname'=>'user', 'shortname'=>'up1edupersonprimaryaffiliation'), MUST_EXIST);
-    $sql = "SELECT data, count(id) as cnt FROM {custom_info_data} WHERE fieldid = ? GROUP BY data";
+    $fieldid = $DB->get_field('user_info_field', 'id',
+            array('shortname'=>'up1edupersonprimaryaffiliation'), MUST_EXIST);
+    $sql = "SELECT data, count(id) as cnt FROM {user_info_data} WHERE fieldid = ? GROUP BY data";
     $rows = $DB->get_records_sql($sql, array($fieldid));
     foreach ($rows as $row) {
         $res[] = array($row->data, $row->cnt);
