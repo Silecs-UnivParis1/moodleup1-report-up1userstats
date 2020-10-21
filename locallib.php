@@ -3,8 +3,7 @@
 /**
  * Lib functions
  *
- * @package    report
- * @subpackage up1userstats
+ * @package    report_up1userstats
  * @copyright  2012-2020 Silecs {@link http://www.silecs.info/societe}
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
